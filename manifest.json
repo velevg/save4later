@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Save4Later",
+  "version": "1.0",
+  "description": "save links for later use",
+  "author": "G. Velev",
+  "icons": {
+    "256": "assets/icons/Save4Later256.png",
+    "128": "assets/icons/Save4Later128.png",
+    "64": "assets/icons/Save4Later64.png",
+    "48": "assets/icons/Save4Later48.png",
+    "32": "assets/icons/Save4Later32.png",
+    "24": "assets/icons/Save4Later24.png",
+    "16": "assets/icons/Save4Later16.png"
+  },
+  "permissions": ["tabs", "activeTab", "<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["./assets/scripts/popup.js"]
+    }
+  ],
+  "background": { "scripts": ["./assets/scripts/popup.js"] },
+  "browser_action": {
+    "default_icon": "assets/icons/Save4Later16.png",
+    "default_popup": "./Popup.html"
+  }
+}
